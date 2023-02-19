@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="index.js">
+    <script>
+        function validarContraseña() {
+            var contraseña1 = document.getElementById("contraseña1");
+            var contraseña2 = document.getElementById("contraseña2");
+            if (contraseña1.value != contraseña2.value) {
+                contraseña2.setCustomValidity("Las contraseñas no coinciden");
+            } else {
+                contraseña2.setCustomValidity("");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content row justify-content-center align-items-center letra">
+
+        <div class="caja">
+            <h1>Create acount</h1><br>
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label> <br>
+                <input type="text" id="nombre" pattern="[a-zA-Z]+" name="nombre" required class=" form w-100">
+                <label for="nombre" data-error="Rellene este campo"></label><br>
+                <label for="correo">Correo electrónico:</label> <br>
+                <input type="email" id="correo" name="correo" required class=" form w-100 ">
+                <label for="correo" class="error" data-error="Rellene este campo"></label><br>
+                <label for="contraseña1">Contraseña:</label><br>
+                <input type="password" id="contraseña1" name="contraseña1" minlength="1" maxlength="8" required
+                    class=" form w-100 ">
+                <label for="contraseña1" data-error="Rellene este campo"></label><br>
+                <label for="contraseña2">Repite la contraseña:</label><br>
+                <input type="password" id="contraseña2" name="contraseña2" required oninput="validarContraseña()"
+                    class=" form w-100 ">
+                <label for="contraseña2" data-error="Las contraseñas no coinciden"></label><br>
+                <p>
+                    <button type="submit" class="btn">Enviar</button>
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
